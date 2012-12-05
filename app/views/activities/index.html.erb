@@ -1,0 +1,23 @@
+<h1>TODO</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Comment</th>
+    <th>State</th>
+    <th></th>
+  </tr>
+
+<% @activities.each do |activity| %>
+  <tr>
+    <td><%= link_to activity.name, edit_activity_path(activity.id) %></td>
+    <td><%= activity.comment %></td>
+    <td><%= activity.state.name %></td>
+    <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Activity', new_activity_path %>
