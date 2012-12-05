@@ -1,5 +1,5 @@
 class State < ActiveRecord::Base
   attr_accessible :name
 
-  belongs_to :activity
+  has_many :activities
 end
