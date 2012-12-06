@@ -17,13 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, :rows => "4" %>
   </div>
   <div class="field">
     <%= f.label :state %>
     <%= f.select :state_id, State.all.collect{|s| [s.name, s.id] } %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
