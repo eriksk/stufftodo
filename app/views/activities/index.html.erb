@@ -1,21 +1,18 @@
-<h1>TODO</h1>
-
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Comment</th>
-    <th>State</th>
-  </tr>
+<h6>Stuff to do!</h>
 
 <% @activities.each do |activity| %>
-    <tr>
-      <td><%= link_to activity.name, edit_activity_path(activity.id) %></td>
-      <td><%= activity.comment %></td>
-      <td><%= activity.state.name if activity.state %></td>
-    </tr>
-</table>
+<div class="row">
+  <a href="<%= edit_activity_path(activity.id) %>">
+    <div class="span12 well">
+      <div class="span6">
+        <%= activity.name %>
+      </div>
+      <div class="span3">
+        <span class="label label-info"><%= activity.state.name if activity.state %></span>
+      </div>
+    </div>
+  </a>
+</div>
 <% end %>
-
-<br />
 
 <%= link_to 'New Activity', new_activity_path, :class => "btn" %>
